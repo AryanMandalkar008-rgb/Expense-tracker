@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker | Personal Finance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a class="logo" href="#">Expense<span>Track</span></a>
+        <span class="tagline">Personal Finance Dashboard</span>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">YOUR MONEY, UNDER CONTROL</p>
+                <h1>Expense Tracker</h1>
+                <p>Track your income, manage expenses and build better habits.</p>
+            </div>
+            <div class="date-box" id="today"></div>
+        </section>
+
+        <section class="summary">
+            <article class="summary-card balance">
+                <p>Total Balance</p>
+                <h2 id="balance">₹0.00</h2>
+                <span>Available balance</span>
+            </article>
+
+            <article class="summary-card">
+                <p>Total Income</p>
+                <h2 id="income">₹0.00</h2>
+                <span>Money received</span>
+            </article>
+
+            <article class="summary-card">
+                <p>Total Expenses</p>
+                <h2 id="expenses">₹0.00</h2>
+                <span>Money spent</span>
+            </article>
+        </section>
+        
+<section class="panel chart-panel">
+    <div class="chart-heading">
+        <div>
+            <h2>Monthly Expenses</h2>
+            <p class="muted">Your spending over the last 6 months</p>
+        </div>
+        <span class="chart-badge">LAST 6 MONTHS</span>
+    </div>
+
+    <div id="monthly-chart" class="monthly-chart"
+         role="img" aria-label="Monthly expense chart">
+    </div>
+</section>
+
+
+        <section class="content-grid">
+            <article class="panel">
+                <h2>Add Transaction</h2>
+                <p class="muted">Record your income or expenses.</p>
+
+                <form id="transaction-form">
+                    <label for="description">Description</label>
+                    <input id="description" type="text"
+                           placeholder="e.g. College lunch" required>
+
+                    <label for="amount">Amount (₹)</label>
+                    <input id="amount" type="number" min="0.01"
+                           step="0.01" placeholder="Enter amount" required>
+
+                    <label for="type">Transaction Type</label>
+                    <select id="type">
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                    </select>
+
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="Food">Food</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Education">Education</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Salary">Salary</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="date">Date</label>
+                    <input id="date" type="date" required>
+
+                    <button type="submit" class="primary-btn">
+                        + Add Transaction
+                    </button>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="transactions-heading">
+                    <div>
+                        <h2>Recent Transactions</h2>
+                        <p class="muted">Your financial activity</p>
+                    </div>
+
+                    <select id="filter">
+                        <option value="all">All</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expenses</option>
+                    </select>
+                </div>
+
+                <div id="transaction-list" class="transaction-list">
+                    <p class="empty-state">No transactions yet. Add your first one!</p>
+                </div>
+            </article>
+        </section>
+
+        <footer>
+            <p>ExpenseTrack · Manage money smarter.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
